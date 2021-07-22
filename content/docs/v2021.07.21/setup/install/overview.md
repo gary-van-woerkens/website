@@ -84,13 +84,14 @@ NAME                                                CHART VERSION APP VERSION DE
 appscode/kubeform-provider-aws                      {{< param "info.installer" >}}    {{< param "info.aws" >}}  Kubeform Provider Aws Controller by AppsCode      
 appscode/kubeform-provider-azurerm                  {{< param "info.installer" >}}    {{< param "info.azurerm" >}}  Kubeform Provider Azurerm Controller by AppsCode  
 appscode/kubeform-provider-digitalocean             {{< param "info.installer" >}}    {{< param "info.digitalocean" >}} Kubeform Provider Digitalocean Controller by Ap...
+appscode/kubeform-provider-equinixmetal             {{< param "info.installer" >}}    {{< param "info.equinixmetal" >}} Kubeform Provider Equinix Metal Controller by Ap...
 appscode/kubeform-provider-google                   {{< param "info.installer" >}}    {{< param "info.google" >}} Kubeform Provider Google Controller by AppsCode   
 appscode/kubeform-provider-linode                   {{< param "info.installer" >}}    {{< param "info.linode" >}} Kubeform Provider Linode Controller by AppsCode   
 
 $ helm install kubeform-provider-*** appscode/kubeform-provider-*** \
   --version {{< param "info.installer" >}} \
   --namespace kubeform --create-namespace \
-  --set-file license=/path/to/the/license.txt
+  --set-file kubeform-provider.license=/path/to/the/license.txt
 ```
 
 To see the detailed configuration options, visit [here](https://github.com/kubeform/installer/tree/{{< param "info.installer" >}}/charts).
@@ -110,13 +111,14 @@ NAME                                                CHART VERSION APP VERSION DE
 appscode/kubeform-provider-aws                      {{< param "info.installer" >}}    {{< param "info.aws" >}}  Kubeform Provider Aws Controller by AppsCode      
 appscode/kubeform-provider-azurerm                  {{< param "info.installer" >}}    {{< param "info.azurerm" >}}  Kubeform Provider Azurerm Controller by AppsCode  
 appscode/kubeform-provider-digitalocean             {{< param "info.installer" >}}    {{< param "info.digitalocean" >}} Kubeform Provider Digitalocean Controller by Ap...
+appscode/kubeform-provider-equinixmetal             {{< param "info.installer" >}}    {{< param "info.equinixmetal" >}} Kubeform Provider Equinix Metal Controller by Ap...
 appscode/kubeform-provider-google                   {{< param "info.installer" >}}    {{< param "info.google" >}} Kubeform Provider Google Controller by AppsCode   
 appscode/kubeform-provider-linode                   {{< param "info.installer" >}}    {{< param "info.linode" >}} Kubeform Provider Linode Controller by AppsCode   
 
 $ helm template kubeform-provider-*** appscode/kubeform-provider-*** \
   --version {{< param "info.installer" >}} \
   --namespace kubeform --create-namespace \
-  --set-file license=/path/to/the/license.txt \
+  --set-file kubeform-provider.license=/path/to/the/license.txt \
   --set kubeform-provider.cleaner.skip=true | kubectl apply -f -
 ```
 
@@ -130,10 +132,10 @@ To see the detailed configuration options, visit [here](https://github.com/kubef
 To check if Kubeform operator pods have started, run the following command:
 
 ```bash
-$ kubectl get pods --all-namespaces -l app.kubernetes.io/name=kubeform --watch
+$ kubectl get pods --all-namespaces -l app.kubernetes.io/name=kubeform-provider --watch
 
-NAMESPACE     NAME                        READY  STATUS    RESTARTS   AGE
-kubeform   kubeform-859d6bdb56-m9br5   1/1    Running   2          5s
+NAMESPACE   NAME                                             READY   STATUS    RESTARTS   AGE
+kubeform    kubeform-provider-equinixmetal-8f7bddf64-sxtrr   1/1     Running   0          12m
 ```
 
 Once the operator pod is running, you can cancel the above command by typing `Ctrl+C`.
