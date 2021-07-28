@@ -2,7 +2,7 @@
 title: Equinix Metal
 menu:
   docs_v2021.07.28:
-    identifier: equinix-guides
+    identifier: equinixmetal-guides
     name: Equinix Metal
     parent: guides
     weight: 15
