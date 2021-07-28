@@ -99,6 +99,7 @@ spec:
     storageAccountName: <STORAGE_ACCOUNT_NAME>
   providerRef:
     name: azure-provider-secret
+  terminationPolicy: DoNotTerminate
 ```
 
 Here, the `resource` field contains the Azure Storage Container spec. Also, we can see that the provider secret is referenced using a field called `providerRef`.
@@ -132,6 +133,7 @@ spec:
     storageAccountName: <STORAGE_ACCOUNT_NAME>
   providerRef:
     name: azure-provider-secret
+  terminationPolicy: DoNotTerminate
 ```
 
 Now, apply it using kubectl command.

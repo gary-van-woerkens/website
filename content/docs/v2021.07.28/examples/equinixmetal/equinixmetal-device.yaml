@@ -3,7 +3,6 @@ kind: Device
 metadata:
   name: test
 spec:
-  updatePolicy: Destroy
   resource:
     hostname: "kubeform-test"
     plan: "c3.small.x86"
@@ -13,3 +12,5 @@ spec:
     projectID: "<your-project-id>"
   providerRef:
     name: em-secret
+  terminationPolicy: DoNotTerminate
+

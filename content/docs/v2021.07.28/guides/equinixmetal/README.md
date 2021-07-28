@@ -89,7 +89,6 @@ kind: Device
 metadata:
   name: test
 spec:
-  updatePolicy: Destroy
   resource:
     hostname: "kubeform-test"
     plan: "c3.small.x86"
@@ -99,6 +98,7 @@ spec:
     projectID: "<your-project-id>"
   providerRef:
     name: em-secret
+  terminationPolicy: DoNotTerminate
 ```
 
 Here, the `resource` field contains the Equinix Metal Device spec. Also, we can see that the provider secret is referenced using a field called `providerRef`.
@@ -126,7 +126,6 @@ kind: Device
 metadata:
   name: test
 spec:
-  updatePolicy: Destroy
   resource:
     hostname: "kubeform-test-updated"
     plan: "c3.small.x86"
@@ -136,6 +135,7 @@ spec:
     projectID: "<your-project-id>"
   providerRef:
     name: em-secret
+  terminationPolicy: DoNotTerminate
 ```
 
 Now, apply it using kubectl command.

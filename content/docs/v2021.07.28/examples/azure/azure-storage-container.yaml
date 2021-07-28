@@ -8,3 +8,4 @@ spec:
     storageAccountName: <STORAGE_ACCOUNT_NAME>
   providerRef:
     name: azure-provider-secret
+  terminationPolicy: DoNotTerminate
