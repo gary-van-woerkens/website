@@ -52,18 +52,22 @@ menu:
     identifier: azure
     parent: clouds
     weight: 20
-  - name: Google Cloud
-    identifier: google
-    parent: clouds
-    weight: 30
   - name: DigitalOcean
     identifier: digitalocean
     parent: clouds
+    weight: 30
+  - name: Equinix Metal
+    identifier: equinixmetal
+    parent: clouds
     weight: 40
+  - name: Google Cloud
+    identifier: google
+    parent: clouds
+    weight: 50
   - name: Linode
     identifier: linode
     parent: clouds
-    weight: 50
+    weight: 60
   - name: GitHub
     identifier: github
     parent: community
