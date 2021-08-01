@@ -1,6 +1,5 @@
 ---
-title: Concepts
-description: Concepts
+title: Concepts | Kubeform
 menu:
   docs_v2021.07.28:
     identifier: concepts

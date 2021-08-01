@@ -26,13 +26,20 @@ info:
 
 # Setup
 
+<div style="text-align: center;">
+  <a class="button is-link is-medium is-active has-text-weight-normal" href="/docs/v2021.07.28/setup/install/community" style="background:#00A651; width: 18rem;">Install Community Edition</a>
+  <a class="button is-info is-medium is-active has-text-weight-normal" href="/docs/v2021.07.28/setup/install/enterprise"  style="background:#FC6011; width: 18rem;">Try Enterprise Edition</a>
+  <a style="margin-top: 10px; display: block;" href="https://kubeform.com/pricing/">Compare Editions</a>
+</div>
+<br>
+
 The setup section contains instructions for installing the Kubeform and its various components in Kubernetes. This section has been divided into the following sub-sections:
 
 - **Install Kubeform:** Installation instructions for Kubeform and its various components.
-  - [Overview](/docs/v2021.07.28/setup/install/overview): Installation instructions for Kubeform.
+  - [Community Edition](/docs/v2021.07.28/setup/install/community): Installation instructions for Kubeform Community Edition.
+  - [Enterprise Edition](/docs/v2021.07.28/setup/install/enterprise): Installation instructions for Kubeform Enterprise Edition.
   - [Troubleshooting](/docs/v2021.07.28/setup/install/troubleshoting): Troubleshooting guide for various installation problems.
-
 - **Uninstall Kubeform:** Uninstallation instructions for Kubeform and its various components.
-  - [Overview](/docs/v2021.07.28/setup/uninstall/overview): Uninstallation instructions for Kubeform.
-
+  - [Community Edition](/docs/v2021.07.28/setup/uninstall/community): Uninstallation instructions for Kubeform Community Edition.
+  - [Enterprise Edition](/docs/v2021.07.28/setup/uninstall/enterprise): Uninstallation instructions for Kubeform Enterprise Edition.
 - [Upgrading Kubeform](/docs/v2021.07.28/setup/upgrade/): Instruction for updating Kubeform license and upgrading between various Kubeform versions.

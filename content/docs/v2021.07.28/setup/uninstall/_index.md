@@ -6,7 +6,7 @@ menu:
     identifier: uninstallation-guide
     name: Uninstall
     parent: setup
-    weight: 20
+    weight: 30
 menu_name: docs_v2021.07.28
 info:
   aws: v0.2.0

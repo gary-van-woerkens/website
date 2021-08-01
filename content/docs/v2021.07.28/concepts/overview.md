@@ -1,12 +1,11 @@
 ---
-title: Kubeform Overview
-description: Kubeform Overview
+title: What is Kubeform
 menu:
   docs_v2021.07.28:
-    identifier: overview-concepts
+    identifier: what-is-kubeform-concepts
     name: Overview
-    parent: what-is-kubeform
-    weight: 10
+    parent: concepts
+    weight: 15
 menu_name: docs_v2021.07.28
 section_menu_id: concepts
 info:
@@ -19,6 +18,8 @@ info:
   linode: v0.2.0
   version: v2021.07.28
 ---
+
+> New to Kubeform? Please start [here](/docs/v2021.07.28/concepts/README).
 
 # Kubeform
 

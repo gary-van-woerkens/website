@@ -25,9 +25,32 @@ info:
 
 This guide will show you how to upgrade various Kubeform components. Here, we are going to show how to upgrade from an old Kubeform version to the new version, how to migrate between the enterprise edition and community edition, and how to update the license, etc.
 
+## Upgrading Kubeform to `{{< param "info.version" >}}`
+
+In order to upgrade from Kubeform to `{{< param "info.version" >}}`, please follow the following steps.
+
+#### 1. Update Kubeform Catalog CRDs
+
+Helm [does not upgrade the CRDs](https://github.com/helm/helm/issues/6581) bundled in a Helm chart if the CRDs already exist. So, to upgrde the Kubeform catalog CRD, please run the command below:
+
+```bash
+kubectl apply -f https://github.com/kubeform/installer/blob/{{< param "info.version" >}}/crds/kubeform-catalog-crds.yaml
+```
+
+#### 2. Upgrade Kubeform Operator
+
+Now, upgrade the Kubeform helm chart using the following command. You can find the latest installation guide [here](/docs/v2021.07.28/setup/README). We recommend that you do **not** follow the legacy installation guide, as the new process is much more simpler.
+
+```bash
+$ helm upgrade kubeform appscode/kubeform \
+  --version {{< param "info.version" >}} \
+  --namespace kubeform \
+  --set-file global.license=/path/to/the/license.txt
+```
+
 ## Migration Between Community Edition and Enterprise Edition
 
-Kubeform `{{< param "info.installer" >}}` supports seamless migration between community edition and enterprise edition. You can run the following commands to migrate between them.
+Kubeform supports seamless migration between community edition and enterprise edition. You can run the following commands to migrate between them.
 
 <ul class="nav nav-tabs" id="migrationTab" role="tablist">
   <li class="nav-item">
@@ -47,9 +70,10 @@ Kubeform `{{< param "info.installer" >}}` supports seamless migration between co
 In order to migrate from Kubeform community edition to Kubeform enterprise edition, please run the following command,
 
 ```bash
-helm upgrade kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
+helm upgrade kubeform -n kubeform appscode/kubeform \
   --reuse-values \
-  --set-file kubeform-provider.license=/path/to/kubeform-provider-license.txt
+  --set kubeform-catalog.skipDeprecated=false \
+  --set-file global.license=/path/to/kubeform-enterprise-license.txt
 ```
 
 **From Enterprise Edition to Community Edition:**
@@ -57,9 +81,10 @@ helm upgrade kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
 In order to migrate from Kubeform enterprise edition to Kubeform community edition, please run the following command,
 
 ```bash
-helm upgrade kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
+helm upgrade kubeform -n kubeform appscode/kubeform \
   --reuse-values \
-  --set-file kubeform-provider.license=/path/to/kubeform-provider-license.txt
+  --set kubeform-catalog.skipDeprecated=false \
+  --set-file global.license=/path/to/kubeform-community-license.txt
 ```
 
 </div>
@@ -73,10 +98,11 @@ In order to migrate from Kubeform community edition to Kubeform enterprise editi
 
 ```bash
 # Install Kubeform enterprise edition
-helm template kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
+helm template kubeform -n kubeform appscode/kubeform \
   --version {{< param "info.version" >}} \
-  --set kubeform-provider.cleaner.skip=true \
-  --set-file kubeform-provider.license=/path/to/kubeform-provider-license.txt | kubectl apply -f -
+  --set kubeform-catalog.skipDeprecated=false \
+  --set global.skipCleaner=true \
+  --set-file global.license=/path/to/kubeform-enterprise-license.txt | kubectl apply -f -
 ```
 
 **From Enterprise Edition to Community Edition:**
@@ -85,10 +111,11 @@ In order to migrate from Kubeform enterprise edition to Kubeform community editi
 
 ```bash
 # Install Kubeform community edition
-helm template kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
+helm template kubeform -n kubeform appscode/kubeform \
   --version {{< param "info.version" >}} \
-  --set kubeform-provider.cleaner.skip=true \
-  --set-file kubeform-provider.license=/path/to/kubeform-provider-license.txt | kubectl apply -f -
+  --set kubeform-catalog.skipDeprecated=false \
+  --set global.skipCleaner=true \
+  --set-file global.license=/path/to/kubeform-community-license.txt | kubectl apply -f -
 ```
 
 </div>
@@ -117,9 +144,9 @@ Follow the below instructions to update the license:
 #### Using Helm 3
 
 ```bash
-helm upgrade kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
+helm upgrade kubeform -n kubeform appscode/kubeform \
   --reuse-values \
-  --set-file kubeform-provider.license=/path/to/new/license.txt
+  --set-file global.license=/path/to/new/license.txt
 ```
 
 </div>
@@ -127,11 +154,22 @@ helm upgrade kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
 
 #### Using YAML (with helm 3)
 
+**Update License of Community Edition:**
+
 ```bash
-helm template kubeform-provider-*** -n kubeform appscode/kubeform-provider-*** \
-  --set kubeform-provider.cleaner.skip=true \
-  --show-only appscode/kubeform-provider/templates/license.yaml \
-  --set-file kubeform-provider.license=/path/to/new/license.txt | kubectl apply -f -
+helm template kubeform -n kubeform appscode/kubeform \
+  --set global.skipCleaner=true \
+  --show-only appscode/kubeform-operator/templates/license.yaml \
+  --set-file global.license=/path/to/new/license.txt | kubectl apply -f -
+```
+
+**Update License of Enterprise Edition:**
+
+```bash
+helm template kubeform appscode/kubeform -n kubeform \
+  --set global.skipCleaner=true \
+  --show-only appscode/kubeform-operator/templates/license.yaml \
+  --set-file global.license=/path/to/new/license.txt | kubectl apply -f -
 ```
 
 </div>

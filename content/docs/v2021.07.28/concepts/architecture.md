@@ -1,10 +1,10 @@
 ---
-title: Kubeform Architecture
+title: Kubeform Concepts
 menu:
   docs_v2021.07.28:
-    identifier: kubeform-architecture
-    name: Kubeform Architecture
-    parent: what-is-kubeform
+    identifier: concepts-architecture
+    name: Architecture
+    parent: concepts
     weight: 20
 menu_name: docs_v2021.07.28
 section_menu_id: concepts
@@ -19,7 +19,9 @@ info:
   version: v2021.07.28
 ---
 
-## Kubeform Architecture
+> New to Kubeform? Please start [here](/docs/v2021.07.28/concepts/README).
+
+# Kubeform Architecture
 
 The following diagram shows how `Kubeform` creates a resource on a Cloud Provider (GCP, AWS, etc.).
 

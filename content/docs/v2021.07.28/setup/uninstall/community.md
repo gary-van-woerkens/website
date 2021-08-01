@@ -1,10 +1,10 @@
 ---
-title: Uninstall Kubeform
-description: Uninstallation guide for Kubeform
+title: Uninstall Kubeform Community Edition
+description: Uninstallation guide for Kubeform Community edition
 menu:
   docs_v2021.07.28:
-    identifier: uninstall-kubeform-overview
-    name: Overview
+    identifier: uninstall-kubeform-community
+    name: Community Edition
     parent: uninstallation-guide
     weight: 10
 product_name: kubeform
@@ -21,9 +21,9 @@ info:
   version: v2021.07.28
 ---
 
-# Uninstall Kubeform
+# Uninstall Kubeform Community Edition
 
-To uninstall Kubeform, run the following command:
+To uninstall Kubeform Community edition, run the following command:
 
 <ul class="nav nav-tabs" id="installerTab" role="tablist">
   <li class="nav-item">
@@ -49,7 +49,7 @@ $ helm uninstall kubeform-provider-*** --namespace kubeform
 
 ## Using YAML (with helm 3)
 
-If you prefer to not use Helm, you can generate YAMLs from Kubeform chart and uninstall using `kubectl`.
+If you prefer to not use Helm, you can generate YAMLs from the Kubeform chart and uninstall using `kubectl`.
 
 ```bash
 $ helm template kubeform-provider-*** appscode/kubeform-provider-*** --namespace kubeform | kubectl delete -f -

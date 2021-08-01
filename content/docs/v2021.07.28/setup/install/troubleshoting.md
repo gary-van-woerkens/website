@@ -35,7 +35,7 @@ In addition, if your GKE cluster is a [private cluster](https://cloud.google.com
 
 ## Detect Kubeform version
 
-To detect Kubeform version, exec into the operator pod and run `kubeform version` command.
+To detect Kubeform version, exec into the operator pod and run `provider-***-controller version` command.
 
 ```bash
 $ POD_NAMESPACE=kubeform
