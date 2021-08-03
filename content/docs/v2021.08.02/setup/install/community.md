@@ -95,13 +95,30 @@ Kubeform can be installed via [Helm](https://helm.sh/) using the [chart](https:/
 $ helm repo add appscode https://charts.appscode.com/stable/
 $ helm repo update
 $ helm search repo appscode/kubeform --version {{< param "info.installer" >}}
-NAME                                                CHART VERSION APP VERSION DESCRIPTION                                       
-appscode/kubeform-provider-aws                      {{< param "info.installer" >}}    {{< param "info.aws" >}}  Kubeform Provider Aws Controller by AppsCode      
-appscode/kubeform-provider-azurerm                  {{< param "info.installer" >}}    {{< param "info.azurerm" >}}  Kubeform Provider Azurerm Controller by AppsCode  
-appscode/kubeform-provider-digitalocean             {{< param "info.installer" >}}    {{< param "info.digitalocean" >}} Kubeform Provider Digitalocean Controller by Ap...
-appscode/kubeform-provider-equinixmetal             {{< param "info.installer" >}}    {{< param "info.equinixmetal" >}} Kubeform Provider Equinix Metal Controller by Ap...
-appscode/kubeform-provider-google                   {{< param "info.installer" >}}    {{< param "info.google" >}} Kubeform Provider Google Controller by AppsCode   
-appscode/kubeform-provider-linode                   {{< param "info.installer" >}}    {{< param "info.linode" >}} Kubeform Provider Linode Controller by AppsCode   
+NAME                                                CHART VERSION APP VERSION DESCRIPTION
+appscode/kubeform-provider-alicloud                 {{< param "info.installer" >}}    {{< param "info.alicloud" >}}       Kubeform Provider Alicloud Controller by AppsCode
+appscode/kubeform-provider-aws                      {{< param "info.installer" >}}    {{< param "info.aws" >}}      Kubeform Provider Aws Controller by AppsCode
+appscode/kubeform-provider-azurerm                  {{< param "info.installer" >}}    {{< param "info.azurerm" >}}      Kubeform Provider Azurerm Controller by AppsCode
+appscode/kubeform-provider-civo                     {{< param "info.installer" >}}    {{< param "info.civo" >}}       Kubeform Provider Civo Controller by AppsCode
+appscode/kubeform-provider-datadog                  {{< param "info.installer" >}}    {{< param "info.datadog" >}}      Kubeform Provider Datadog Controller by AppsCode
+appscode/kubeform-provider-digitalocean             {{< param "info.installer" >}}    {{< param "info.digitalocean" >}}       Kubeform Provider Digitalocean Controller by Ap...
+appscode/kubeform-provider-dynatrace                {{< param "info.installer" >}}    {{< param "info.dynatrace" >}}      Kubeform Provider Dynatrace Controller by AppsCode
+appscode/kubeform-provider-ec                       {{< param "info.installer" >}}    {{< param "info.ec" >}}       Kubeform Provider Ec Controller by AppsCode
+appscode/kubeform-provider-equinixmetal             {{< param "info.installer" >}}    {{< param "info.equinixmetal" >}}       Kubeform Provider Equinixmetal Controller by Ap...
+appscode/kubeform-provider-google                   {{< param "info.installer" >}}    {{< param "info.google" >}}       Kubeform Provider Google Controller by AppsCode
+appscode/kubeform-provider-grafana                  {{< param "info.installer" >}}    {{< param "info.grafana" >}}      Kubeform Provider Grafana Controller by AppsCode
+appscode/kubeform-provider-hcloud                   {{< param "info.installer" >}}    {{< param "info.hcloud" >}}       Kubeform Provider Hcloud Controller by AppsCode
+appscode/kubeform-provider-ibm                      {{< param "info.installer" >}}    {{< param "info.ibm" >}}      Kubeform Provider Ibm Controller by AppsCode
+appscode/kubeform-provider-linode                   {{< param "info.installer" >}}    {{< param "info.linode" >}}       Kubeform Provider Linode Controller by AppsCode
+appscode/kubeform-provider-mongodbatlas             {{< param "info.installer" >}}    {{< param "info.mongodbatlas" >}}       Kubeform Provider Mongodbatlas Controller by Ap...
+appscode/kubeform-provider-newrelic                 {{< param "info.installer" >}}    {{< param "info.newrelic" >}}       Kubeform Provider Newrelic Controller by AppsCode
+appscode/kubeform-provider-ovh                      {{< param "info.installer" >}}    {{< param "info.ovh" >}}      Kubeform Provider Ovh Controller by AppsCode
+appscode/kubeform-provider-pagerduty                {{< param "info.installer" >}}    {{< param "info.pagerduty" >}}      Kubeform Provider Pagerduty Controller by AppsCode
+appscode/kubeform-provider-rediscloud               {{< param "info.installer" >}}    {{< param "info.rediscloud" >}}       Kubeform Provider Rediscloud Controller by Apps...
+appscode/kubeform-provider-upcloud                  {{< param "info.installer" >}}    {{< param "info.upcloud" >}}      Kubeform Provider Upcloud Controller by AppsCode
+appscode/kubeform-provider-vsphere                  {{< param "info.installer" >}}    {{< param "info.vsphere" >}}      Kubeform Provider Vsphere Controller by AppsCode
+appscode/kubeform-provider-vultr                    {{< param "info.installer" >}}    {{< param "info.vultr" >}}      Kubeform Provider Vultr Controller by AppsCode
+appscode/kubeform-provider-wavefront                {{< param "info.installer" >}}    {{< param "info.wavefront" >}}      Kubeform Provider Wavefront Controller by AppsCode
 
 $ helm install kubeform-provider-*** appscode/kubeform-provider-*** \
   --version {{< param "info.installer" >}} \
