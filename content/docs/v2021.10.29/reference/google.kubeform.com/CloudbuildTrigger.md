@@ -1,0 +1,127 @@
+---
+title: CloudbuildTrigger
+menu:
+  docs_v2021.10.29:
+    identifier: cloudbuildtrigger-google.kubeform.com
+    name: CloudbuildTrigger
+    parent: google.kubeform.com-reference
+    weight: 1
+menu_name: docs_v2021.10.29
+section_menu_id: reference
+info:
+  alicloud: v0.4.0
+  aws: v0.4.0
+  azurerm: v0.4.0
+  civo: v0.4.0
+  datadog: v0.4.0
+  digitalocean: v0.4.0
+  dynatrace: v0.4.0
+  ec: v0.4.0
+  equinixmetal: v0.4.0
+  google: v0.4.0
+  grafana: v0.4.0
+  hcloud: v0.4.0
+  ibm: v0.4.0
+  installer: v2021.10.29
+  linode: v0.4.0
+  mongodbatlas: v0.4.0
+  newrelic: v0.4.0
+  oci: v0.4.0
+  ovh: v0.4.0
+  pagerduty: v0.4.0
+  rediscloud: v0.4.0
+  upcloud: v0.4.0
+  version: v2021.10.29
+  vsphere: v0.4.0
+  vultr: v0.4.0
+  wavefront: v0.4.0
+---
+
+## CloudbuildTrigger
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `apiVersion` | string | `google.kubeform.com/v1alpha1` |
+|    `kind` | string | `CloudbuildTrigger` |
+| `metadata` | ***[Kubernetes meta/v1.ObjectMeta](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#objectmeta-v1-meta)***|Refer to the Kubernetes API documentation for the fields of the `metadata` field.|
+| `spec` | ***[CloudbuildTriggerSpec](#cloudbuildtriggerspec)***||
+| `status` | ***[CloudbuildTriggerStatus](#cloudbuildtriggerstatus)***||
+## CloudbuildTriggerSpec
+
+Appears on:[CloudbuildTrigger](#cloudbuildtrigger), [CloudbuildTriggerStatus](#cloudbuildtriggerstatus)
+
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `providerRef` | ***[Kubernetes core/v1.LocalObjectReference](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#localobjectreference-v1-core)***||
+| `id` | ***string***||
+| `build` | ***[[]CloudbuildTriggerSpecBuild](#cloudbuildtriggerspecbuild)***| ***(Optional)*** |
+| `createTime` | ***string***| ***(Optional)*** |
+| `description` | ***string***| ***(Optional)*** |
+| `disabled` | ***bool***| ***(Optional)*** |
+| `filename` | ***string***| ***(Optional)*** |
+| `ignoredFiles` | ***[]string***| ***(Optional)*** |
+| `includedFiles` | ***[]string***| ***(Optional)*** |
+| `project` | ***string***| ***(Optional)*** |
+| `substitutions` | ***map[string]string***| ***(Optional)*** |
+| `triggerID` | ***string***| ***(Optional)*** |
+| `triggerTemplate` | ***[[]CloudbuildTriggerSpecTriggerTemplate](#cloudbuildtriggerspectriggertemplate)***| ***(Optional)*** |
+## CloudbuildTriggerSpecBuild
+
+Appears on:[CloudbuildTriggerSpec](#cloudbuildtriggerspec)
+
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `images` | ***[]string***| ***(Optional)*** |
+| `step` | ***[[]CloudbuildTriggerSpecBuildStep](#cloudbuildtriggerspecbuildstep)***| ***(Optional)*** |
+| `tags` | ***[]string***| ***(Optional)*** |
+## CloudbuildTriggerSpecBuildStep
+
+Appears on:[CloudbuildTriggerSpecBuild](#cloudbuildtriggerspecbuild)
+
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `args` | ***[]string***| ***(Optional)*** |
+| `dir` | ***string***| ***(Optional)*** |
+| `entrypoint` | ***string***| ***(Optional)*** |
+| `env` | ***[]string***| ***(Optional)*** |
+| `ID` | ***string***| ***(Optional)*** |
+| `name` | ***string***| ***(Optional)*** |
+| `secretEnv` | ***[]string***| ***(Optional)*** |
+| `timeout` | ***string***| ***(Optional)*** |
+| `timing` | ***string***| ***(Optional)*** |
+| `volumes` | ***[[]CloudbuildTriggerSpecBuildStepVolumes](#cloudbuildtriggerspecbuildstepvolumes)***| ***(Optional)*** |
+| `waitFor` | ***[]string***| ***(Optional)*** |
+## CloudbuildTriggerSpecBuildStepVolumes
+
+Appears on:[CloudbuildTriggerSpecBuildStep](#cloudbuildtriggerspecbuildstep)
+
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `name` | ***string***| ***(Optional)*** |
+| `path` | ***string***| ***(Optional)*** |
+## CloudbuildTriggerSpecTriggerTemplate
+
+Appears on:[CloudbuildTriggerSpec](#cloudbuildtriggerspec)
+
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `branchName` | ***string***| ***(Optional)*** |
+| `commitSha` | ***string***| ***(Optional)*** |
+| `dir` | ***string***| ***(Optional)*** |
+| `projectID` | ***string***| ***(Optional)*** |
+| `repoName` | ***string***| ***(Optional)*** |
+| `tagName` | ***string***| ***(Optional)*** |
+## CloudbuildTriggerStatus
+
+Appears on:[CloudbuildTrigger](#cloudbuildtrigger)
+
+| Field | Type | Description |
+| ------ | ----- | ----------- |
+| `observedGeneration` | ***int64***| ***(Optional)*** Resource generation, which is updated on mutation by the API Server.|
+| `output` | ***[CloudbuildTriggerSpec](#cloudbuildtriggerspec)***| ***(Optional)*** |
+| `state` | ***kubeform.dev/kubeform/apis/base/v1alpha1.State***| ***(Optional)*** |
+| `phase` | ***[Phase](#phase)***| ***(Optional)*** |
+## Phase(`string` alias)
+
+Appears on:[CloudbuildTriggerStatus](#cloudbuildtriggerstatus)
+
+---
