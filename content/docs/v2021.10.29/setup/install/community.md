@@ -15,6 +15,7 @@ info:
   aws: v0.4.0
   azurerm: v0.4.0
   civo: v0.4.0
+  cli: v0.1.0
   datadog: v0.4.0
   digitalocean: v0.4.0
   dynatrace: v0.4.0
