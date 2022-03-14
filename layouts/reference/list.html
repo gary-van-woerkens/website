@@ -201,7 +201,7 @@
           <ul class="contents">
           {{ range .Pages }}
               <li>
-                <a href="{{.URL}}" >{{.Title}}</a>
+                <a href="{{ .Permalink }}" >{{ .Title }}</a>
               </li>
           {{ end }}
           </ul>
