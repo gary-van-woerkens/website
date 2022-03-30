@@ -636,8 +636,7 @@
                       {{ range .Children }}
                       {{ if eq .Parent $.Site.Params.main_menu_dropdown_item }}
                       <!-- single product start  -->
-                      <a href="/kubernetes/databases/run-and-manage-{{ .Identifier }}-on-kubernetes
-" class="single-product">
+                      <a href="/docs/{{ $p.latestVersion }}/guides/{{ .Identifier }}/" class="single-product">
                         {{ if .Pre }}
                         <div class="product-logo">
                           <img src="{{ .Pre }}" alt="Menu Icon">
@@ -847,14 +846,14 @@
     <div class="container">
       <div class="cta-area-inner">
         <div class="container">
-          <div class="columns is-vcentered">
-            <div class="column is-8">
+          <div class="columns is-vcentered is-multiline">
+            <div class="column is-full-tablet is-half-tablet is-half-desktop">
               <h3 data-aos="fade-up" data-aos-duration="500">Ready to Get Started?</h3>
               <p data-aos="fade-up" data-aos-duration="700">Install {{ $p.name }} in your Kubernetes cluster
               </p>
             </div>
-            <div class="column is-4  has-text-centered-touch has-text-right-desktop">
-              <div class="buttons">
+            <div class="column is-full-tablet is-half-tablet is-half-desktop has-text-centered-touch has-text-right-desktop">
+              <div class="buttons is-justify-content-flex-end">
                 <a href="/docs/{{ $p.latestVersion }}/setup/" class="button ac-button is-white" data-aos="fade-up"
                   data-aos-duration="900">TRY NOW FREE</a>
                 <a href="{{ $.Site.Params.domain_appscode }}/contact/" class="button ac-button is-secondary"
