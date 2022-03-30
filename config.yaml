@@ -42,6 +42,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    style: manni
 menu:
   main:
   - name: Clouds
@@ -49,45 +51,33 @@ menu:
     weight: 15
   - name: Documentation
     weight: 20
-  - name: Community
-    identifier: community
-    weight: 25
   - name: AWS
     identifier: aws
     parent: clouds
     weight: 10
+    pre: /assets/images/icon/cloud-service-provider/aws.svg
   - name: Azure
     identifier: azure
     parent: clouds
     weight: 20
+    pre: /assets/images/icon/cloud-service-provider/azure.svg
   - name: DigitalOcean
     identifier: digitalocean
     parent: clouds
     weight: 30
+    pre: /assets/images/icon/cloud-service-provider/digital-ocean.svg
   - name: Equinix Metal
     identifier: equinixmetal
     parent: clouds
     weight: 40
+    pre: /assets/images/icon/cloud-service-provider/equinix-metal.svg
   - name: Google Cloud
     identifier: google
     parent: clouds
     weight: 50
+    pre: /assets/images/icon/cloud-service-provider/google.svg
   - name: Linode
     identifier: linode
     parent: clouds
     weight: 60
-  - name: GitHub
-    identifier: github
-    parent: community
-    url: https://github.com/kubeform
-    weight: 1
-  - name: Twitter
-    identifier: twitter
-    parent: community
-    url: https://twitter.com/Kubeform
-    weight: 2
-  - name: Slack
-    identifier: slack
-    parent: community
-    url: https://slack.appscode.com
-    weight: 3
+    pre: /assets/images/icon/cloud-service-provider/linode.svg
