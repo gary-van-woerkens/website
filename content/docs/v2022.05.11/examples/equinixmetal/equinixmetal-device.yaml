@@ -1,0 +1,17 @@
+apiVersion: device.equinixmetal.kubeform.com/v1alpha1
+kind: Device
+metadata:
+  name: test
+  namespace: demo
+spec:
+  resource:
+    hostname: "kubeform-test"
+    plan: "c3.small.x86"
+    metro: "sv"
+    operatingSystem: "ubuntu_20_10"
+    billingCycle: "hourly"
+    projectID: "<your-project-id>"
+  providerRef:
+    name: em-secret
+  terminationPolicy: DoNotTerminate
+

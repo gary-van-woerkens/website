@@ -1,0 +1,13 @@
+apiVersion: tf.kubeform.com/v1alpha1
+kind: Module
+metadata:
+  name: aws-s3-module-sample
+  namespace: demo
+spec:
+  resource:
+    input:
+      bucket: "kubeform-module"
+      forceDestroy: true
+  moduleDef: module-def-public
+  providerRef:
+    name: aws-credentials

@@ -1,0 +1,15 @@
+apiVersion: instance.linode.kubeform.com/v1alpha1
+kind: Instance
+metadata:
+  name: test1
+  namespace: demo
+spec:
+  resource:
+    region: us-east
+    image: linode/ubuntu18.04
+    label: instance-test1
+  providerRef:
+    name: linode-provider-secret
+  secretRef:
+    name: linode-sensitive-secret
+  terminationPolicy: DoNotTerminate
