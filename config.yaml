@@ -81,3 +81,7 @@ menu:
     parent: clouds
     weight: 60
     pre: /assets/images/icon/cloud-service-provider/linode.svg
+outputs:
+  home:
+  - HTML
+  - JSON

@@ -79,3 +79,7 @@ menu:
     parent: community
     url: https://slack.appscode.com
     weight: 3
+outputs:
+  home:
+  - HTML
+  - JSON
