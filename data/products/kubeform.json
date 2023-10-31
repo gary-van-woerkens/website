@@ -56,7 +56,7 @@
       "description": "Standard Kubernetes is all you need. If you can run Kubernetes, you can provision and manage cloud infrastructure using Kubeform. Use standard Kubernetes CLI and API to provision and manage different cloud infrastructures. This native integration with Kubernetes means your cloud infrastructures are ready for any higher level deployment tooling like GitOps, Open Policy Agent (OPA), etc."
     },
     {
-      "title": "Built on Terrafrom",
+      "title": "Built on Terraform",
       "image": {
         "src": "/assets/images/products/kubeform/features/feature-2.png",
         "alt": "http"
