@@ -135,7 +135,7 @@
         "url": "http://kubeform.com",
         "features": [
           "Infrastructure as Code",
-          "Built on Terrafrom",
+          "Built on Terraform",
           "Native Kubernetes Support",
           "Supports Multiple Cloud Platform",
           "Unleash Developer Velocity"
